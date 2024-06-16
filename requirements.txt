@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+chardet
+pycryptodome
+pydantic
+pydantic_core
