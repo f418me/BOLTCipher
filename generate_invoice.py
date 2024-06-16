@@ -12,5 +12,8 @@ print(info_A)
 
 # Create invoice for test payment
 invoice = node.invoice(18000, "lbl{}".format(random.random()), "testpayment")
-
 print(invoice)
+print("")
+print(f"bolt11: {invoice['bolt11']}")
+print(f"payment_secret: {invoice['payment_secret']}")
+
