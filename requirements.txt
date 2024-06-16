@@ -4,3 +4,4 @@ chardet
 pycryptodome
 pydantic
 pydantic_core
+pyln-client
