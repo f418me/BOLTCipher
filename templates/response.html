@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Info</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<div class="formbold-logo-wrapper"><a href="https://f418.me">
+    <img src="{{ url_for('static', path='/logo.svg') }}" alt="logo" width="150" height="45"/>
+</a></div>
+
+
+    <div class="formbold-title-wrapper">
+            <label for="unique_id" class="bold-label">uuid:</label>
+        </div>
+    <div class="formbold-main-wrapper">
+
+            <p
+                    name="unique_id"
+                    id="unique_id"
+                    class="formbold-form-output"
+            >{{ unique_id }}</p>
+        </div>
+
+    <div class="formbold-title-wrapper">
+        <label for="content_decrypted" class="bold-label">cost:</label>
+    </div>
+    <div class="formbold-main-wrapper">
+
+        <p
+                name="cost"
+                id="cost"
+                class="formbold-form-output"
+        >{{ cost }}</p>
+    </div>
+
+    <div class="formbold-title-wrapper">
+    <label for="content_decrypted" class="bold-label">abstract:</label>
+</div>
+    <div class="formbold-main-wrapper">
+
+    <p
+            name="abstract"
+            id="abstract"
+            class="formbold-form-output"
+    >{{ abstract }}</p>
+</div>
+
+    <div class="formbold-title-wrapper">
+            <label for="bolt11" class="bold-label">bolt11 invoice:</label>
+        </div>
+    <div class="formbold-main-wrapper">
+
+            <p
+                    name="bolt11"
+                    id="bolt11"
+                    class="formbold-form-output"
+            >{{ bolt11 }}</p>
+        </div>
+
+    <div class="formbold-title-wrapper">
+    <label for="iv_hex" class="bold-label">initialize vector:</label>
+</div>
+    <div class="formbold-main-wrapper">
+
+    <p
+            name="iv_hex"
+            id="iv_hex"
+            class="formbold-form-output"
+    >{{ iv_hex }}</p>
+</div>
+
+    <div class="formbold-title-wrapper">
+            <label for="encrypted_content" class="bold-label">encrypted content:</label>
+        </div>
+    <div class="formbold-main-wrapper">
+
+            <p
+                    name="encrypted_content"
+                    id="encrypted_content"
+                    class="formbold-form-output"
+            >{{ encrypted_content }}</p>
+        </div>
+
+</body>
