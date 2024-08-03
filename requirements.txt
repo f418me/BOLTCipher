@@ -1,8 +1,9 @@
-fastapi
+fastapi~=0.111.0
 uvicorn[standard]
 chardet
 pycryptodome
-pydantic
+pydantic~=2.7.4
 pydantic_core
 pyln-client
 jinja2
+starlette~=0.37.2

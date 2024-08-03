@@ -19,11 +19,11 @@
                     name="unique_id"
                     id="unique_id"
                     class="formbold-form-output"
-            >{{ unique_id }}</p>
+            >{{ item.unique_id }}</p>
         </div>
 
     <div class="formbold-title-wrapper">
-        <label for="content_decrypted" class="bold-label">cost:</label>
+        <label for="cost" class="bold-label">cost:</label>
     </div>
     <div class="formbold-main-wrapper">
 
@@ -31,11 +31,11 @@
                 name="cost"
                 id="cost"
                 class="formbold-form-output"
-        >{{ cost }}</p>
+        >{{ item.cost }}</p>
     </div>
 
     <div class="formbold-title-wrapper">
-    <label for="content_decrypted" class="bold-label">abstract:</label>
+    <label for="abstract" class="bold-label">abstract:</label>
 </div>
     <div class="formbold-main-wrapper">
 
@@ -43,7 +43,7 @@
             name="abstract"
             id="abstract"
             class="formbold-form-output"
-    >{{ abstract }}</p>
+    >{{ item.abstract }}</p>
 </div>
 
     <div class="formbold-title-wrapper">
@@ -55,7 +55,7 @@
                     name="bolt11"
                     id="bolt11"
                     class="formbold-form-output"
-            >{{ bolt11 }}</p>
+            >{{ item.bolt11 }}</p>
         </div>
 
     <div class="formbold-title-wrapper">
@@ -67,7 +67,7 @@
             name="iv_hex"
             id="iv_hex"
             class="formbold-form-output"
-    >{{ iv_hex }}</p>
+    >{{ item.initialize_vector_hex }}</p>
 </div>
 
     <div class="formbold-title-wrapper">
@@ -79,7 +79,7 @@
                     name="encrypted_content"
                     id="encrypted_content"
                     class="formbold-form-output"
-            >{{ encrypted_content }}</p>
+            >{{ item.encrypted_content }}</p>
         </div>
 
 </body>

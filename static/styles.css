@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.formbold-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12px 24px;
+}
+
+.formbold-title-wrapper, .formbold-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 12px; /* Abstand zwischen den Blöcken */
+  width: 100%; /* Vollständige Breiteneinnahme */
+  padding: 12px 24px;
+}
+
+.formbold-form-output {
+  width: 100%;
+  padding: 13px 22px;
+  border-radius: 5px;
+  border: 1px solid #DDE3EC;
+  background: #213259;
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+  align-self: stretch; /* Ausdehnung über die volle Containerbreite */
+}
+
+.bold-label {
+  font-weight: 700;
+  color: #FF9900;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
