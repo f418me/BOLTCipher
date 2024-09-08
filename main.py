@@ -17,6 +17,7 @@ from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
 from config import Config
+from utils.cln import get_invoice
 
 #todo put all strings into config
 
@@ -24,8 +25,6 @@ from config import Config
 config = Config()
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=str(config.LOG_LEVEL))
 log = logging.getLogger(__name__)
-
-invoice_amount_msats = int(config.CONTENT_PRICE) * 1000
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -89,32 +88,20 @@ async def get_content(request: Request):
     with open('abstract_planB.txt', 'r', encoding='utf-8') as file:
         abstract = file.read()
 
-    node = LightningRpc("/Users/fre/.lightning/bitcoin/lightning-rpc")
-
-    # Generierung eines zufälligen Strings
-    random_string = secrets.token_hex(16)
-
-    # Kombination des Präfixes mit dem zufälligen String
-    invoice_label = "BoltCipher-" + random_string
-
+    invoice_amount_msats = int(config.CONTENT_PRICE) * 1000
     preimage = secrets.token_hex(32)
 
-    invoice = node.invoice(
-        amount_msat=invoice_amount_msats,
-        label=invoice_label,
-        description="BOLTCipher",
-        preimage=preimage
-    )
 
+    invoice = get_invoice(invoice_amount_msats, preimage)
     bolt11 = invoice['bolt11']
 
-    hex_key = preimage
-    key = binascii.unhexlify(hex_key)
+    key = binascii.unhexlify(preimage)
     iv = get_random_bytes(16)
     iv_hex = iv.hex()
-    print("iv_hex: ", iv_hex)
-    print("hex_key: ", hex_key)
-    print("blot11: ", bolt11)
+
+    log.info("iv_hex: ", iv_hex)
+    log.info("hex_key / preimage: ", preimage)
+    log.info("blot11: ", bolt11)
 
     encrypted_content = encrypt_message_b64(encoded_content, key, iv)
 
@@ -124,6 +111,7 @@ async def get_content(request: Request):
         initialize_vector_hex=iv_hex,
         encrypted_content=encrypted_content
     )
+
     return templates.TemplateResponse(
         request=request, name="response.html",
         context={"request": request, "item": content_item.dict()}
