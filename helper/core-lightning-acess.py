@@ -1,4 +1,5 @@
 from pyln.client import LightningRpc
+
 from config import Config
 
 config = Config()

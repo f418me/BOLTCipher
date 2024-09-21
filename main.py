@@ -91,13 +91,16 @@ async def get_content(request: Request):
     invoice_amount_msats = int(config.CONTENT_PRICE) * 1000
     preimage = secrets.token_hex(32)
 
+    # We use the first 16 bytes of the key as the iv
+    iv_hex = preimage[:32]
+    iv = binascii.unhexlify(iv_hex)
 
     invoice = get_invoice(invoice_amount_msats, preimage)
     bolt11 = invoice['bolt11']
 
     key = binascii.unhexlify(preimage)
-    iv = get_random_bytes(16)
-    iv_hex = iv.hex()
+    #iv = get_random_bytes(16)
+    #iv_hex = iv.hex()
 
     log.info("iv_hex: ", iv_hex)
     log.info("hex_key / preimage: ", preimage)
