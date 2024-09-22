@@ -36,7 +36,10 @@ body {
   font-weight: 500;
   font-size: 14px;
   color: #FFFFFF;
-  align-self: stretch; /* Ausdehnung über die volle Containerbreite */
+  align-self: stretch;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .bold-label {

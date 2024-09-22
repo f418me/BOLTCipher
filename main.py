@@ -99,12 +99,12 @@ async def get_content(request: Request):
     bolt11 = invoice['bolt11']
 
     key = binascii.unhexlify(preimage)
-    #iv = get_random_bytes(16)
-    #iv_hex = iv.hex()
 
-    log.info("iv_hex: ", iv_hex)
-    log.info("hex_key / preimage: ", preimage)
-    log.info("blot11: ", bolt11)
+    log.info(f"iv_hex: {iv_hex}")
+    log.info(f"preimage: {preimage}")
+    log.info(f"bolt11: {bolt11}")
+
+
 
     encrypted_content = encrypt_message_b64(encoded_content, key, iv)
 
