@@ -99,7 +99,6 @@ def download_pdf_in_zip():
     pdf_file_path = "bitcoin.pdf"
     zip_file_path = pdf_file_path + '.zip'
     pwd = 'mypassword'
-    path = '.'
-    subprocess.run(["zip", "-P", pwd, '-r', zip_file_path, path])
+    subprocess.run(["zip", "-P", pwd, '-r', zip_file_path, pdf_file_path])
 
     return FileResponse(zip_file_path, media_type="application/zip", filename=zip_file_path)
