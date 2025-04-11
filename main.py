@@ -1,8 +1,11 @@
 import binascii
 import logging
+import os
 import secrets
 import subprocess
 from base64 import b64encode
+
+import uvicorn
 from fastapi import FastAPI
 from Crypto.Cipher import ChaCha20
 from pydantic import BaseModel, Field
@@ -110,3 +113,9 @@ def download_pdf_in_zip():
 
     return FileResponse(zip_file_path, media_type="application/zip", filename=zip_file_path)
 
+
+if __name__ == "__main__":
+    app_host = os.getenv("APP_HOST", "127.0.0.1")
+    app_port = int(os.getenv("APP_PORT", "8000"))
+
+    uvicorn.run(app, host=app_host, port=app_port)
