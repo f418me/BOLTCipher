@@ -4,7 +4,7 @@ import binascii
 import os
 
 # 256-Bit-Schlüssel (32 Byte)
-hex_key = '016ede0e62833ff4088a60f8b7823943ba641b0da11555997f434734e860738d'
+hex_key = 'd6d1ad27df5bace05d9fd48216dd2b5ddc03b8d537058f8343b8b9e47afe551d'
 key = binascii.unhexlify(hex_key)
 
 # 64-Bit-Nonce (8 Byte) – zufällig generiert
@@ -12,7 +12,7 @@ nonce = os.urandom(8)
 
 print(f"Nonce: {binascii.hexlify(nonce).decode()}")
 
-original_text = "this is the original text"
+original_text = "This is the content of the Plan B"
 data = original_text.encode()
 
 # Verschlüsseln mit ChaCha20

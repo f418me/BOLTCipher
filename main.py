@@ -46,7 +46,7 @@ def get_content():
         content = file.read()
         encoded_content = content.encode('utf-8')
 
-    with open('abstract_planB.txt', 'r', encoding='utf-8') as file:
+    with open('abstract.txt', 'r', encoding='utf-8') as file:
         abstract = file.read()
 
     invoice_amount_msats = int(config.CONTENT_PRICE) * 1000

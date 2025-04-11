@@ -6,15 +6,15 @@ import binascii
 # Replace these values with your actual data!
 
 # 256-bit key (32 bytes) as hex string
-key_hex_string = '016ede0e62833ff4088a60f8b7823943ba641b0da11555997f434734e860738d'
+key_hex_string = '0cfebc3a24f47fb635ab19f55c0c4c9d32a5ef4c859b83d3b7ac4fb96143e1ba'
 
 # 64-bit nonce (8 bytes) as hex string
 # Example: Must be the nonce used during encryption!
-nonce_hex_string = '51ca3d42755fdf2c' # <--- REPLACE THIS VALUE
+nonce_hex_string = '1cfa1980a0e84b3520422766' # <--- REPLACE THIS VALUE
 
 # Encrypted text as Base64 string
 # Example: Must be the encrypted text!
-encrypted_text_b64_string = 'yrgxIuAIRcwVREeLOpDgG/j4G43Fbwc31w==' # <--- REPLACE THIS VALUE
+encrypted_text_b64_string = '8z6yCrKNQ5ShcKRoc9y2xp6STsTngYYh0T8eZ6tQstuQ' # <--- REPLACE THIS VALUE
 
 
 # --- Conversion from Strings to Bytes ---
