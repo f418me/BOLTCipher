@@ -11,10 +11,9 @@
 
 
 <div class="formbold-title-wrapper">
-    <label for="encrypt_mode" class="bold-label">encryption mode:</label>
+    <label for="encrypt_mode" class="bold-label">Encryption Mode:</label>
 </div>
 <div class="formbold-main-wrapper">
-
     <p
             name="encrypt_mode"
             id="encrypt_mode"
@@ -23,10 +22,9 @@
 </div>
 
 <div class="formbold-title-wrapper">
-    <label for="cost" class="bold-label">cost:</label>
+    <label for="cost" class="bold-label">Cost:</label>
 </div>
 <div class="formbold-main-wrapper">
-
     <p
             name="cost"
             id="cost"
@@ -35,10 +33,9 @@
 </div>
 
 <div class="formbold-title-wrapper">
-    <label for="abstract" class="bold-label">abstract:</label>
+    <label for="abstract" class="bold-label">Abstract:</label>
 </div>
 <div class="formbold-main-wrapper">
-
     <p
             name="abstract"
             id="abstract"
@@ -47,10 +44,9 @@
 </div>
 
 <div class="formbold-title-wrapper">
-    <label for="bolt11" class="bold-label">bolt11 invoice:</label>
+    <label for="bolt11" class="bold-label">Bolt11 Invoice:</label>
 </div>
 <div class="formbold-main-wrapper">
-
     <p
             name="bolt11"
             id="bolt11"
@@ -59,10 +55,21 @@
 </div>
 
 <div class="formbold-title-wrapper">
-    <label for="encrypted_content" class="bold-label">encrypted content:</label>
+    <label for="nonce_hex" class="bold-label">Nonce (Hex):</label>
+     <span class="formbold-comment">(Required for decryption)</span>
 </div>
 <div class="formbold-main-wrapper">
+    <p
+            name="nonce_hex"
+            id="nonce_hex"
+            class="formbold-form-output"
+    >{{ item.nonce_hex }}</p>
+</div>
 
+<div class="formbold-title-wrapper">
+    <label for="encrypted_content" class="bold-label">Encrypted Content (Base64):</label>
+</div>
+<div class="formbold-main-wrapper">
     <p
             name="encrypted_content"
             id="encrypted_content"
@@ -71,3 +78,4 @@
 </div>
 
 </body>
+</html>
