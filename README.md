@@ -37,6 +37,28 @@ uvicorn main:app --reload
 
 The HTML view is available at `http://localhost:8000/` by default. A JSON API is served under `/json/`.
 
+## Docker
+
+The application can also be started inside a Docker container. Build the image
+and run it with access to your Core Lightning RPC file:
+
+```bash
+docker build -t boltcipher .
+docker run -p 8000:8000 \
+    -v /path/to/lightning-rpc:/data/lightning-rpc \
+    --env-file .env boltcipher
+```
+
+Alternatively you can start the service using `docker-compose`:
+
+```bash
+docker compose up --build
+```
+
+The mount makes the RPC socket available inside the container as
+`/data/lightning-rpc`. Set `LIGHTNING_RPC_FILE=/data/lightning-rpc` in your
+`.env` file (see `.env_example`).
+
 ## Directory Structure
 
 - `main.py` – entry point of the FastAPI server
