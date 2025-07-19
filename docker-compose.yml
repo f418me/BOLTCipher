@@ -1,0 +1,10 @@
+version: '3'
+services:
+  boltcipher:
+    build: .
+    volumes:
+      - /path/to/lightning-rpc:/data/lightning-rpc
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
