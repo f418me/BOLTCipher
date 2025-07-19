@@ -2,6 +2,10 @@
 
 BOLTCipher is a small FastAPI service that sells encrypted content via the Lightning Network. The plaintext lives in `content.txt`, is encrypted with ChaCha20 and delivered along with a Lightning invoice.
 
+## Demo
+
+You can try a running instance at <https://boltcipher.f418.me/>. To verify or decrypt the encrypted content use the companion project [BOLTCipherVerifier](https://github.com/f418me/BOLTCipherVerifier) which is also available online at <https://boltcipherverifier.f418.me/>.
+
 ## Installation
 
 1. Install Python 3.9 or newer.
@@ -17,19 +21,7 @@ BOLTCipher is a small FastAPI service that sells encrypted content via the Light
 
 ## Configuration
 
-The application reads its settings from environment variables (e.g. using an `.env` file). The most important ones are:
-
-- `LOG_LEVEL` – log level to use
-- `PAGE_TITLE` – page title shown in the browser
-- `PAGE_INFO` – additional information displayed on the index page
-- `CONTENT_PRICE` – price for the encrypted content in satoshis
-- `LIGHTNING_RPC_FILE` – path to the RPC file of a Core Lightning node
-- `INVOICE_LABEL_PREFIX` – prefix for generated invoice labels
-- `INVOICE_DESCRIPTION` – description text for the created invoice
-- `APP_HOST` – IP address the server binds to (default `0.0.0.0`)
-- `APP_PORT` – port the server listens on (default `8000`)
-- `PROXY_HEADERS` – enable processing of proxy headers (default `True`)
-- `FORWARDED_ALLOW_IPS` – comma-separated list of IPs trusted as proxies (default `'*'`)
+Copy `.env_example` to `.env` and adjust the values to your environment. The example file contains all available settings with explanatory comments.
 
 ## Starting the Server
 
