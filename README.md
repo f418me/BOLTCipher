@@ -17,6 +17,20 @@ BOLTCipher demonstrates an innovative approach to selling digital content via th
 
 This cryptographically links payment and access rights – whoever has paid can decrypt.
 
+### When to Use BOLTCipher vs L402
+
+**L402 (Payment Required Before Service):**
+When providing a service that incurs costs (e.g., calling external APIs, running computations, using resources), you need payment upfront. L402 is the right choice here – the client pays first, then receives the service.
+
+**BOLTCipher (Content Delivery):**
+When delivering static content or data that's already available, BOLTCipher offers a simpler alternative. The content is delivered immediately in encrypted form, and payment unlocks the decryption key. This approach:
+- Eliminates the need for payment verification before delivery
+- Reduces server-side complexity (no authentication, session management, or payment tracking)
+- Allows instant content delivery with cryptographic payment enforcement
+- Works well for information, documents, media files, or any pre-existing data
+
+In essence: if your service costs you money to provide, use L402. If you're selling content or data, BOLTCipher provides a lightweight alternative.
+
 ### The Process
 
 **1. Content Request**
